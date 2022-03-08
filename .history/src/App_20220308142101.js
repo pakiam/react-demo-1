@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import logo from './logo.svg';
 import './App.css';
 import Expenses from './components/Expenses/Expenses';
 import NewExpense from './components/NewExpense/NewExpense'
@@ -30,7 +31,6 @@ function App() {
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES)
 
   function onAddExpense (expense) {
-    console.log(expense)
     setExpenses((prevState) => {
       return [expense, ...prevState]
     })
@@ -39,8 +39,17 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
         <NewExpense onAddExpense={onAddExpense}/>
         <Expenses items={expenses}/>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
       </header>
     </div>
   );

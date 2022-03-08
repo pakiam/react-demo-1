@@ -30,7 +30,6 @@ function App() {
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES)
 
   function onAddExpense (expense) {
-    console.log(expense)
     setExpenses((prevState) => {
       return [expense, ...prevState]
     })
